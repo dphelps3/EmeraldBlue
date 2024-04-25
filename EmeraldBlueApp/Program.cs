@@ -1,10 +1,13 @@
 using EmeraldBlueApp;
+using Microsoft.Fast.Components.FluentUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddFluentUIComponents();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

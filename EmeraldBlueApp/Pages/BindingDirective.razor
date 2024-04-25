@@ -1,0 +1,27 @@
+﻿@page "/binding-directive"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Binding Directive Example</h1>
+
+<form>
+
+    <FluentLabel Typo="Typography.H6" Color="Microsoft.Fast.Components.FluentUI.Color.Info" Class="mt-4">Personal Information</FluentLabel>
+
+    <div class="row pt-2 pb-2">
+        <div class="col-12">
+            <FluentLabel Typo="Typography.Body" Color="Microsoft.Fast.Components.FluentUI.Color.Lightweight" Style="font-size: medium; padding-bottom: 5px">First Name</FluentLabel>
+            <FluentTextField Placeholder="First Name" TextFieldType="TextFieldType.Text" Style="width: 100%"></FluentTextField>
+        </div>
+    </div>
+
+    <div class="row pt-2 pb-2">
+        <div class="col-12">
+            <FluentLabel Typo="Typography.Body" Color="Microsoft.Fast.Components.FluentUI.Color.Lightweight" Style="font-size: medium; padding-bottom: 5px">Last Name</FluentLabel>
+            <FluentTextField Placeholder="Last Name" TextFieldType="TextFieldType.Text" Style="width: 100%"></FluentTextField>
+        </div>
+    </div>
+
+    <button class="btn btn-success btn-lg" type="submit" @onclick:preventDefault>Submit</button>
+
+</form>

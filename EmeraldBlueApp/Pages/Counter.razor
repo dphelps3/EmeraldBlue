@@ -7,11 +7,21 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Increment</button>
 
 <button class="btn btn-danger" @onclick="ClearValue">Clear</button>
 
-<CounterComponent CurrentCounterValue="@currentCount" />
+@*  This parameter uses an expression.
+    Example of a one-way data binding.
+*@
+<CounterComponentOneWay CurrentCounterValue="@currentCount" />
+
+@*
+    This parameter uses a @bind- prefix.
+    This notifies the parent component when the state changes.
+    Example of a two-way data binding.
+*@
+<CounterComponentTwoWay @bind-CurrentCounterValue="@currentCount" />
 
 @code {
     private int currentCount = 0;

@@ -1,0 +1,25 @@
+﻿
+<div style="background-color:lightcyan; padding:15px; margin-top:30px;">
+
+    <h3>Counter Component Two-Way</h3>
+
+    <p>As civilizations evolve, technology advances, and alliances shift, the game pulsates with an electrifying energy, drawing players deeper into a world where every decision shapes the course of history. In Age of Empires 2, the excitement is palpable, the stakes are high, and the glory of victory awaits those bold enough to seize it.</p>
+
+    <p><strong>Current Value:</strong> @CurrentCounterValue</p>
+
+    <button class="btn btn-success" @onclick=UpdateCurrentCounterValue>Update</button>
+</div>
+
+@code {
+    [Parameter]
+    public int CurrentCounterValue { get; set; }
+
+    [Parameter]
+    public EventCallback<int> CurrentCounterValueChanged { get; set; }
+
+    async Task UpdateCurrentCounterValue()
+    {
+        CurrentCounterValue++;
+        await CurrentCounterValueChanged.InvokeAsync(CurrentCounterValue);
+    }
+}
