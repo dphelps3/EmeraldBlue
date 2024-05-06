@@ -8,6 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddFluentUIComponents();
 builder.Services.AddHttpClient();
+builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
@@ -22,7 +23,13 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+app.UseRouting();
 app.UseAntiforgery();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapBlazorHub(); // SignalR connection
+});
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
