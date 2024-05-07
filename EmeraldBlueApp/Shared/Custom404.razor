@@ -1,0 +1,13 @@
+﻿@inject NavigationManager NavigationManager
+
+<section>
+    <button class="btn btn-link" @onclick="GoHome">Return Home</button>
+</section>
+
+@code {
+
+    void GoHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

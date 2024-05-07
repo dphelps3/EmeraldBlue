@@ -26,11 +26,6 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAntiforgery();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapBlazorHub(); // SignalR connection
-});
-
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
