@@ -1,3 +1,4 @@
+using DataAccessLibrary;
 using EmeraldBlueApp;
 using Microsoft.Fast.Components.FluentUI;
 
@@ -9,6 +10,8 @@ builder.Services.AddRazorComponents()
 builder.Services.AddFluentUIComponents();
 builder.Services.AddHttpClient();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+builder.Services.AddTransient<IPeopleData, PeopleData>();
 
 var app = builder.Build();
 

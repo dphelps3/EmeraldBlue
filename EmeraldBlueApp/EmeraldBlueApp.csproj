@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Fast.Components.FluentUI" Version="3.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
